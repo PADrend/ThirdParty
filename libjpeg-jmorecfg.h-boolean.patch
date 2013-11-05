@@ -1,0 +1,15 @@
+--- jmorecfg.h	2013-04-19 10:03:45.521869151 +0200
++++ jmorecfg.h	2013-04-19 10:03:48.382023910 +0200
+@@ -260,8 +260,12 @@
+ #define TRUE	1
+ #endif
+ #else
++#if defined(FALSE) || defined(TRUE)
++typedef int boolean;
++#else
+ typedef enum { FALSE = 0, TRUE = 1 } boolean;
+ #endif
++#endif
+ 
+ 
+ /*
