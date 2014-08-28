@@ -207,6 +207,17 @@ ExternalProject_Add(EP_LIBSQLITE
 )
 endif()
 
+option(BUILD_LIBSERIAL "Build the Serial library (optional; used for optional Util::Serial-functions; https://github.com/wjwwood/serial)" OFF)
+if(BUILD_LIBSERIAL)
+ExternalProject_Add(EP_LIBSERIAL
+	URL https://github.com/wjwwood/serial/archive/1.2.0.tar.gz
+	URL_MD5 "d20ce726ec42ea84a1729576a1e7203a"
+	PATCH_COMMAND cp ${CMAKE_CURRENT_LIST_DIR}/libserial-CMakeLists.txt CMakeLists.txt && cp ${CMAKE_CURRENT_LIST_DIR}/libserial-serialConfig.cmake.in serialConfig.cmake.in
+	CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE:FILEPATH=${TOOLCHAIN_FILE} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR> -DCMAKE_BUILD_TYPE:STRING=Release
+	INSTALL_DIR ${INSTALL_DIR}
+)
+endif()
+
 option(BUILD_LIBXML2 "Build the libxml2 library (optional; alternative to the built-in XML parser and required by OpenCOLLADA)" ON)
 if(BUILD_LIBXML2)
 ExternalProject_Add(EP_LIBXML2
