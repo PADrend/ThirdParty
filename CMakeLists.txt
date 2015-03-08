@@ -286,7 +286,7 @@ ExternalProject_Add(EP_LIBBULLET
 )
 endif()
 
-option(BUILD_OPENCL "Build the OpenCL ICD library (optional; used for OpenCL)" ON)
+option(BUILD_OPENCL "Build the OpenCL ICD library (optional; used for OpenCL; may require installed OpenCL-SDK)" OFF)
 if(BUILD_OPENCL)
 ExternalProject_Add(EP_LIBOPENCL
 	URL https://www.khronos.org/registry/cl/specs/opencl-icd-1.2.11.0.tgz
