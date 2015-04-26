@@ -126,8 +126,8 @@ option(BUILD_LIBFREETYPE "Build the FreeType library (recommended; used for rend
 if(BUILD_LIBFREETYPE)
 ExternalProject_Add(EP_LIBFREETYPE
 	DEPENDS EP_ZLIB EP_LIBPNG
-	URL http://downloads.sourceforge.net/project/freetype/freetype2/2.5.0/freetype-2.5.0.1.tar.gz
-	URL_MD5 "aa1c67c73bbcbcc61bece94ac7389731"
+	URL http://downloads.sourceforge.net/project/freetype/freetype2/2.5.5/freetype-2.5.5.tar.gz
+	URL_MD5 "7448edfbd40c7aa5088684b0a3edb2b8"
 	INSTALL_DIR ${INSTALL_DIR}
 	CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --host=${ARCH_TRIPLET} --disable-static --without-png CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
 )
