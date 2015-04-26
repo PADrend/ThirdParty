@@ -91,8 +91,8 @@ if(NOT APPLE)
 option(BUILD_OPENAL "Build the OpenAL library (optional; used for audio output; if possible, use an OpenAL library provided by the operating system instead)" ON)
 if(BUILD_OPENAL)
 ExternalProject_Add(EP_LIBOPENAL
-	URL http://kcat.strangesoft.net/openal-releases/openal-soft-1.15.1.tar.bz2
-	URL_MD5 "ea83dec3b9655a27d28e7bc7cae9cd71"
+	URL http://kcat.strangesoft.net/openal-releases/openal-soft-1.16.0.tar.bz2
+	URL_MD5 "14db4b0d12f07252070b4fe5eb5911f6"
 	INSTALL_DIR ${INSTALL_DIR}
 	CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE:FILEPATH=${TOOLCHAIN_FILE} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR> -DCMAKE_BUILD_TYPE:STRING=Release -DUTILS:BOOL=OFF -DEXAMPLES:BOOL=OFF -DMMDEVAPI:BOOL=OFF -DCMAKE_C_FLAGS:STRING=${CMAKE_C_FLAGS}
 )
