@@ -39,8 +39,8 @@ if(WIN32)
 option(BUILD_CPPUNIT "Build the CppUnit library (optional; used for unit testing)" ON)
 if(BUILD_CPPUNIT)
 ExternalProject_Add(EP_LIBCPPUNIT
-	URL http://dev-www.libreoffice.org/src/cppunit-1.13.1.tar.gz
-	URL_MD5 "fa9aa839145cdf860bf596532bb8af97"
+	URL http://dev-www.libreoffice.org/src/cppunit-1.13.2.tar.gz
+	URL_MD5 "d1c6bdd5a76c66d2c38331e2d287bc01"
 	PATCH_COMMAND patch -p0 < ${CMAKE_CURRENT_LIST_DIR}/libcppunit-TestAssert.h-sprintf_s.patch
 	CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --host=${ARCH_TRIPLET} --disable-static --disable-doxygen CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} LIBS=-lstdc++
 	INSTALL_DIR ${INSTALL_DIR}
