@@ -48,12 +48,12 @@ ExternalProject_Add(EP_LIBCPPUNIT
 endif()
 endif()
 
-option(BUILD_CURL "Build the curl library (recommended; used for Util's NetProvider)" ON)
+option(BUILD_CURL "Build the cURL library (recommended; used for Util's NetProvider)" ON)
 if(BUILD_CURL)
 ExternalProject_Add(EP_LIBCURL
 	DEPENDS EP_ZLIB
-	URL http://curl.haxx.se/download/curl-7.33.0.tar.gz
-	URL_MD5 "c8a4eaac7ce7b0d1bf458d62ccd4ef93"
+	URL http://curl.haxx.se/download/curl-7.42.0.tar.gz
+	URL_MD5 "e941e7a1f3c06d002152bf775c678b35"
 	CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --host=${ARCH_TRIPLET} --disable-static --disable-manual --with-zlib=<INSTALL_DIR> CC=${CMAKE_C_COMPILER} LD=${CMAKE_LINKER}
 	INSTALL_DIR ${INSTALL_DIR}
 )
