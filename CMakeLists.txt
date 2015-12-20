@@ -72,8 +72,8 @@ endif()
 option(BUILD_GLEW "Build the GLEW library (required; needed for OpenGL functions and extensions)" ON)
 if(BUILD_GLEW)
 ExternalProject_Add(EP_LIBGLEW
-	URL http://downloads.sourceforge.net/project/glew/glew/1.12.0/glew-1.12.0.tgz
-	URL_MD5 "01246c7ecd135d99be031aa63f86dca1"
+	URL http://downloads.sourceforge.net/project/glew/glew/1.13.0/glew-1.13.0.tgz
+	URL_MD5 "7cbada3166d2aadfc4169c4283701066"
 	CONFIGURE_COMMAND ""
 	BUILD_COMMAND GLEW_DEST=<INSTALL_DIR> CC=${CMAKE_C_COMPILER} ${CMAKE_MAKE_PROGRAM}
 	INSTALL_DIR ${INSTALL_DIR}
