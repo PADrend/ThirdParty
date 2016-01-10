@@ -182,8 +182,8 @@ endif()
 
 ExternalProject_Add(EP_LIBSDL2_NET
 	DEPENDS EP_LIBSDL2
-	URL http://www.libsdl.org/projects/SDL_net/release/SDL2_net-2.0.0.tar.gz
-	URL_MD5 "83bcd0e67796b81b35b08a014c677200"
+	URL http://www.libsdl.org/projects/SDL_net/release/SDL2_net-2.0.1.tar.gz
+	URL_MD5 "5c1d9d1cfa63301b141cb5c0de2ea7c4"
 	CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --host=${ARCH_TRIPLET} --disable-static --with-sdl-prefix=<INSTALL_DIR> CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} "CFLAGS=${SDL_CFLAGS}"
 	INSTALL_DIR ${INSTALL_DIR}
 )
