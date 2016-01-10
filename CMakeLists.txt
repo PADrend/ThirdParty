@@ -167,8 +167,8 @@ set(SDL_CFLAGS "-I<INSTALL_DIR>/include")
 
 ExternalProject_Add(EP_LIBSDL2_IMAGE
 	DEPENDS EP_LIBJPEG EP_LIBPNG EP_LIBTIFF EP_LIBSDL2
-	URL http://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.0.tar.gz
-	URL_MD5 "fb399c8386fb3248f1b33cfe81bdf92b"
+	URL http://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.1.tar.gz
+	URL_MD5 "d94b94555ba022fa249a53a021dc3606"
 	CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --host=${ARCH_TRIPLET} --disable-static --disable-jpg-shared --disable-png-shared --disable-tif-shared --disable-webp --with-sdl-prefix=<INSTALL_DIR> CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} "CFLAGS=${SDL_CFLAGS}"
 	INSTALL_DIR ${INSTALL_DIR}
 )
