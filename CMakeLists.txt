@@ -221,8 +221,8 @@ option(BUILD_LIBXML2 "Build the libxml2 library (optional; alternative to the bu
 if(BUILD_LIBXML2)
 ExternalProject_Add(EP_LIBXML2
 	DEPENDS EP_ZLIB
-	URL ftp://xmlsoft.org/libxml2/libxml2-2.9.3.tar.gz
-	URL_MD5 "daece17e045f1c107610e137ab50c179"
+	URL ftp://xmlsoft.org/libxml2/libxml2-2.9.4.tar.gz
+	URL_MD5 "ae249165c173b1ff386ee8ad676815f5"
 	CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --host=${ARCH_TRIPLET} --disable-static --without-python --with-zlib=<INSTALL_DIR> CC=${CMAKE_C_COMPILER}
 	INSTALL_DIR ${INSTALL_DIR}
 )
