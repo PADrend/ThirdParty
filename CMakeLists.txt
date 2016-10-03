@@ -137,8 +137,8 @@ option(BUILD_LIBSDL2 "Build the SDL2, SDL2_image, and SDL2_net libraries (recomm
 if(BUILD_LIBSDL2)
 
 ExternalProject_Add(EP_LIBJPEG
-	URL http://www.ijg.org/files/jpegsrc.v9a.tar.gz
-	URL_MD5 "3353992aecaee1805ef4109aadd433e7"
+	URL http://www.ijg.org/files/jpegsrc.v9b.tar.gz
+	URL_MD5 "6a9996ce116ec5c52b4870dbcd6d3ddb"
 	CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --host=${ARCH_TRIPLET} --disable-static CC=${CMAKE_C_COMPILER}
 	INSTALL_DIR ${INSTALL_DIR}
 )
