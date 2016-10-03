@@ -102,8 +102,8 @@ endif()
 option(BUILD_LPSOLVE "Build the lp_solve library (optional; only used for MAR)" ON)
 if(BUILD_LPSOLVE)
 ExternalProject_Add(EP_LIBLPSOLVE
-	URL http://downloads.sourceforge.net/lpsolve/lp_solve_5.5.2.0_source.tar.gz
-	URL_MD5 "167c0fb4ab178e0b7ab50bf0a635a836"
+	URL http://downloads.sourceforge.net/lpsolve/lp_solve_5.5.2.5_source.tar.gz
+	URL_MD5 "3be57261fc41dd8e210f54017220d5f7"
 	PATCH_COMMAND cp ${CMAKE_CURRENT_LIST_DIR}/lpsolve-CMakeLists.txt CMakeLists.txt && cp ${CMAKE_CURRENT_LIST_DIR}/lpsolve-lpsolveConfig.cmake.in lpsolveConfig.cmake.in
 	INSTALL_DIR ${INSTALL_DIR}
 	CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE:FILEPATH=${TOOLCHAIN_FILE} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR> -DCMAKE_BUILD_TYPE:STRING=Release
