@@ -145,8 +145,8 @@ ExternalProject_Add(EP_LIBJPEG
 
 ExternalProject_Add(EP_LIBTIFF
 	DEPENDS EP_ZLIB EP_LIBJPEG
-	URL http://download.osgeo.org/libtiff/tiff-4.0.3.tar.gz
-	URL_MD5 "051c1068e6a0627f461948c365290410"
+	URL http://download.osgeo.org/libtiff/tiff-4.0.6.tar.gz
+	URL_MD5 "d1d2e940dea0b5ad435f21f03d96dd72"
 	PATCH_COMMAND patch -p0 < ${CMAKE_CURRENT_LIST_DIR}/libtiff-tiffgt.c-include-GL.patch && cp libtiff/tif_unix.c libtiff/tif_win32.c
 	CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --host=${ARCH_TRIPLET} --disable-static --disable-cxx --with-zlib-include-dir=<INSTALL_DIR>/include --with-zlib-lib-dir=<INSTALL_DIR>/lib --with-jpeg-include-dir=<INSTALL_DIR>/include --with-jpeg-lib-dir=<INSTALL_DIR>/lib CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
 	INSTALL_DIR ${INSTALL_DIR}
