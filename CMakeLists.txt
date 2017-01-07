@@ -199,8 +199,8 @@ endif()
 option(BUILD_SQLITE "Build the SQLite library (recommended; used for Util's DBFSProvider)" ON)
 if(BUILD_SQLITE)
 ExternalProject_Add(EP_LIBSQLITE
-	URL http://www.sqlite.org/2016/sqlite-autoconf-3140200.tar.gz
-	URL_MD5 "90c53cacb811db27f990b8292bd96159"
+	URL http://www.sqlite.org/2017/sqlite-autoconf-3160200.tar.gz
+	URL_MD5 "5a153ef1fd2fa5845ada74deabc68e32"
 	CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --host=${ARCH_TRIPLET} --disable-static CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
 	INSTALL_DIR ${INSTALL_DIR}
 )
