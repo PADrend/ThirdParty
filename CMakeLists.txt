@@ -114,8 +114,8 @@ option(BUILD_LIBPNG "Build the libpng library (recommended; used to load and sav
 if(BUILD_LIBPNG)
 ExternalProject_Add(EP_LIBPNG
 	DEPENDS EP_ZLIB
-	URL http://download.sourceforge.net/libpng/libpng-1.6.25.tar.gz
-	URL_MD5 "87cbd0f69e4bff0215de3994a149df77"
+	URL http://download.sourceforge.net/libpng/libpng-1.6.27.tar.gz
+	URL_MD5 "58698519e9f6126c1caeefc28dbcbd5f"
 	PATCH_COMMAND patch -p0 < ${CMAKE_CURRENT_LIST_DIR}/libpng-CMakeLists.txt-M_LIBRARY.patch
 	INSTALL_DIR ${INSTALL_DIR}
 	CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE:FILEPATH=${TOOLCHAIN_FILE} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR> -DCMAKE_BUILD_TYPE:STRING=Release -DPNG_STATIC:BOOL=OFF -DPNG_TESTS:BOOL=OFF -DSKIP_INSTALL_EXECUTABLES:BOOL=ON -DSKIP_INSTALL_FILES:BOOL=ON
