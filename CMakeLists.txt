@@ -27,8 +27,8 @@ include(ExternalProject)
 option(BUILD_ZLIB "Build the zlib library (strongly recommended; required by several other libraries)" ON)
 if(BUILD_ZLIB)
 ExternalProject_Add(EP_ZLIB
-	URL http://download.sourceforge.net/project/libpng/zlib/1.2.8/zlib-1.2.8.tar.gz
-	URL_MD5 "44d667c142d7cda120332623eab69f40"
+	URL http://download.sourceforge.net/project/libpng/zlib/1.2.10/zlib-1.2.10.tar.gz
+	URL_MD5 "d9794246f853d15ce0fcbf79b9a3cf13"
 	PATCH_COMMAND patch -p0 < ${CMAKE_CURRENT_LIST_DIR}/zlib-CMakeLists.txt-OUTPUT_NAME.patch
 	INSTALL_DIR ${INSTALL_DIR}
 	CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE:FILEPATH=${TOOLCHAIN_FILE} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR> -DCMAKE_BUILD_TYPE:STRING=Release
