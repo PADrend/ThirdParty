@@ -11,7 +11,7 @@
 +set(CMAKECONFIG_INSTALL_DIR ${LIB_INSTALL_DIR}/cmake/CL)
 +
 +
-+set(OPENCL_DOWNLOAD_HEADER_LOC "https://www.khronos.org/registry/cl/api/1.2")
++set(OPENCL_DOWNLOAD_HEADER_LOC "https://raw.githubusercontent.com/KhronosGroup/OpenCL-Headers/opencl12")
 +
 +file(DOWNLOAD "${OPENCL_DOWNLOAD_HEADER_LOC}/cl_d3d10.h"             "${CMAKE_HOME_DIRECTORY}/inc/CL/cl_d3d10.h") 
 +file(DOWNLOAD "${OPENCL_DOWNLOAD_HEADER_LOC}/cl_d3d11.h"             "${CMAKE_HOME_DIRECTORY}/inc/CL/cl_d3d11.h")
@@ -20,7 +20,7 @@
 +file(DOWNLOAD "${OPENCL_DOWNLOAD_HEADER_LOC}/cl_gl_ext.h"            "${CMAKE_HOME_DIRECTORY}/inc/CL/cl_gl_ext.h")              
 +file(DOWNLOAD "${OPENCL_DOWNLOAD_HEADER_LOC}/cl_gl.h"                "${CMAKE_HOME_DIRECTORY}/inc/CL/cl_gl.h")                  
 +file(DOWNLOAD "${OPENCL_DOWNLOAD_HEADER_LOC}/cl.h"                   "${CMAKE_HOME_DIRECTORY}/inc/CL/cl.h")                       
-+file(DOWNLOAD "${OPENCL_DOWNLOAD_HEADER_LOC}/cl.hpp"                 "${CMAKE_HOME_DIRECTORY}/inc/CL/cl.hpp")                     
++file(DOWNLOAD "https://www.khronos.org/registry/OpenCL/api/2.1/cl.hpp"                 "${CMAKE_HOME_DIRECTORY}/inc/CL/cl.hpp")                     
 +file(DOWNLOAD "${OPENCL_DOWNLOAD_HEADER_LOC}/cl_platform.h"          "${CMAKE_HOME_DIRECTORY}/inc/CL/cl_platform.h")          
 +file(DOWNLOAD "${OPENCL_DOWNLOAD_HEADER_LOC}/opencl.h"               "${CMAKE_HOME_DIRECTORY}/inc/CL/opencl.h")
 +
