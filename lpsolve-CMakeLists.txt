@@ -103,6 +103,17 @@ if(NOT HAVE_ISNAN)
 	set_property(TARGET lpsolve55 APPEND PROPERTY COMPILE_DEFINITIONS NOISNAN)
 endif()
 
+include (CheckLibraryExists)
+check_library_exists(m ceil "" HAVE_LIBM)
+if (HAVE_LIBM)
+  target_link_libraries (lpsolve55 m)
+endif ()
+
+check_library_exists(dl dlopen "" HAVE_LIBDL)
+if (HAVE_LIBDL)
+  target_link_libraries (lpsolve55 dl)
+endif ()
+
 # Set version of library
 set_target_properties(lpsolve55 PROPERTIES VERSION ${LPSOLVE_VERSION}
                                            SOVERSION ${LPSOLVE_VERSION_MAJOR})
