@@ -147,3 +147,9 @@ write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/lpsolveConfigVersio
 # Install the configuration files
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lpsolveConfig.cmake ${CMAKE_CURRENT_BINARY_DIR}/lpsolveConfigVersion.cmake
         DESTINATION ${CMAKE_INSTALL_CMAKECONFIGDIR})
+
+# lpsolve front-end
+add_executable (lp_solve lp_solve/lp_solve.c)
+target_include_directories(lp_solve PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_link_libraries (lp_solve lpsolve55)
+install (TARGETS lp_solve DESTINATION bin)
