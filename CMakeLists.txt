@@ -158,8 +158,8 @@ if(APPLE)
 endif()
 
 ExternalProject_Add(EP_LIBSDL2
-	URL http://www.libsdl.org/release/SDL2-2.0.5.tar.gz
-	URL_MD5 "d4055424d556b4a908aa76fad63abd3c"
+	URL http://www.libsdl.org/release/SDL2-2.0.7.tar.gz
+	URL_MD5 "cdb071009d250e1782371049f0d5ca42"
 	CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --host=${ARCH_TRIPLET} --disable-directx ${SDL_FLAGS} CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER}
 	INSTALL_DIR ${INSTALL_DIR}
 )
