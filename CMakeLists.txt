@@ -52,8 +52,8 @@ option(BUILD_CURL "Build the cURL library (recommended; used for Util's NetProvi
 if(BUILD_CURL)
 ExternalProject_Add(EP_LIBCURL
 	DEPENDS EP_ZLIB
-	URL http://curl.haxx.se/download/curl-7.52.1.tar.gz
-	URL_MD5 "4e1ef056e117b4d25f4ec42ac609c0d4"
+	URL https://curl.haxx.se/download/curl-7.56.1.tar.gz
+	URL_MD5 "48ba7bd7b363b40cd446d1e7b4be9920"
 	CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR> --host=${ARCH_TRIPLET} --disable-static --disable-manual --with-zlib=<INSTALL_DIR> CC=${CMAKE_C_COMPILER} LD=${CMAKE_LINKER}
 	INSTALL_DIR ${INSTALL_DIR}
 )
