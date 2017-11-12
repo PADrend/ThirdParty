@@ -258,8 +258,8 @@ option(BUILD_LIBZIP "Build the libzip library (optional; used for Util's ZIPProv
 if(BUILD_LIBZIP)
 ExternalProject_Add(EP_LIBZIP
 	DEPENDS EP_ZLIB
-	URL https://nih.at/libzip/libzip-1.1.3.tar.gz
-	URL_MD5 "898f02db185068c8ae45bafe4c5cc81c"
+	URL https://libzip.org/download/libzip-1.3.0.tar.gz
+	URL_MD5 "8921860aa46437b6a017928f694014b9"
 	PATCH_COMMAND patch -p0 < ${CMAKE_CURRENT_LIST_DIR}/libzip-CMakeLists.txt-zipconf.h.patch
 	INSTALL_DIR ${INSTALL_DIR}
 	CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE:FILEPATH=${TOOLCHAIN_FILE} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR> -DCMAKE_BUILD_TYPE:STRING=Release
