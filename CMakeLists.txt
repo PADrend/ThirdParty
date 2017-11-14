@@ -229,7 +229,7 @@ ExternalProject_Add(EP_LIBXML2
 )
 endif()
 
-option(BUILD_LIBOPENCOLLADA "Build the OpenCOLLADA library (optional; import of COLLADA files into MinSG; build takes very long)" ON)
+option(BUILD_LIBOPENCOLLADA "Build the OpenCOLLADA library (optional; import of COLLADA files into MinSG; build takes very long)" OFF)
 if(BUILD_LIBOPENCOLLADA)
 ExternalProject_Add(EP_LIBPCRE
 	DEPENDS EP_ZLIB
