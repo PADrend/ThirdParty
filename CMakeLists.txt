@@ -48,6 +48,16 @@ ExternalProject_Add(EP_LIBCPPUNIT
 endif()
 endif()
 
+option(BUILD_CATCH2 "Build the Catch2 library (optional; used for unit testing)" OFF)
+if(BUILD_CATCH2)
+ExternalProject_Add(EP_CATCH2
+	URL https://github.com/catchorg/Catch2/archive/v2.0.1.tar.gz
+	URL_MD5 "2080f4696579351d9323b3b5a8c3c71b"
+	CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE:FILEPATH=${TOOLCHAIN_FILE} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR> -DCMAKE_BUILD_TYPE:STRING=Release
+	INSTALL_DIR ${INSTALL_DIR}
+)
+endif()
+
 option(BUILD_CURL "Build the cURL library (recommended; used for Util's NetProvider)" ON)
 if(BUILD_CURL)
 ExternalProject_Add(EP_LIBCURL
