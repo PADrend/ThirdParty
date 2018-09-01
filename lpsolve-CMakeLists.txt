@@ -7,6 +7,10 @@
 
 cmake_minimum_required(VERSION 2.8.11)
 
+if (NOT DEFINED CMAKE_BUILD_TYPE)
+  set (CMAKE_BUILD_TYPE Release CACHE STRING "Build type")
+endif ()
+
 project(lpsolve C)
 
 set(LPSOLVE_VERSION_MAJOR 5)
@@ -14,11 +18,13 @@ set(LPSOLVE_VERSION_MINOR 5)
 set(LPSOLVE_VERSION_PATCH 2)
 set(LPSOLVE_VERSION ${LPSOLVE_VERSION_MAJOR}.${LPSOLVE_VERSION_MINOR}.${LPSOLVE_VERSION_PATCH})
 
+option (BUILD_SHARED_LIBS "Build NLopt as a shared library" ON)
+
 # Set up install directories
 include(GNUInstallDirs)
 set(CMAKE_INSTALL_CMAKECONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/lpsolve)
 
-add_library(lpsolve55 SHARED
+add_library(lpsolve55
 	lp_MDO.c
 	shared/commonlib.c
 	shared/mmio.c
