@@ -298,14 +298,3 @@ ExternalProject_Add(EP_LIBBULLET
 )
 endif()
 
-option(BUILD_OPENCL "Build the OpenCL ICD library (optional; used for OpenCL; may require installed OpenCL-SDK)" OFF)
-if(BUILD_OPENCL)
-ExternalProject_Add(EP_LIBOPENCL
-	URL https://www.khronos.org/registry/cl/specs/opencl-icd-1.2.11.0.tgz
- 	URL_MD5 "697bd9f3a66fd61ad58fb4a17fda66c7"
-	PATCH_COMMAND patch -p0 < ${CMAKE_CURRENT_LIST_DIR}/opencl-CMakeLists.txt.patch && patch -p0 < ${CMAKE_CURRENT_LIST_DIR}/opencl-icd_dispatch.c.patch
-	INSTALL_DIR ${INSTALL_DIR}
-	CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE:FILEPATH=${TOOLCHAIN_FILE} -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR> -DCMAKE_BUILD_TYPE:STRING=Release
-)
-endif()
-
